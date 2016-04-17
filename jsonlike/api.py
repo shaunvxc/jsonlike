@@ -29,7 +29,6 @@ def loads(content):
 
 def clean_json(content):
     return remove_html(remove_bad_double_quotes(remove_invalid_escapes(add_missing_commas(content))))
-    # content = re.sub('\"\"[^,]','"', re.sub('<[^<]+?>', '', raw.replace("\\", "")))
 
 
 def sub_first(match):
@@ -42,7 +41,7 @@ def sub_last(match):
 
 def remove_bad_double_quotes(content):
     # JSON requires values to be surrounded in " 's, ie `{"foo": "bar"}`. This handles
-    # cases where the JSON is like `{"foo":""bar""}`--- python won't like this case !
+    # cases where the JSON is like `{"foo":""bar""}`--- json.loads() won't like this case !
     return re.sub('([^\:])\"\"', sub_first, re.sub(r'\"\"([^,])', sub_last, content))
 
 
