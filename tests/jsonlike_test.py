@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 import sure
 import json
 
@@ -19,7 +20,3 @@ def test_loads_w_html():
 
 def test_loads_w_html2():
     loads('{"a":1, "b": 2, "c": "<font class="stupid_font">hey</font>"}').should.equal(json.loads('{"a":1, "b": 2, "c": "hey"}'))
-
-
-if __name__ == '__main__':
-    test_loads_w_html()
