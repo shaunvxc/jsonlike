@@ -2,7 +2,12 @@
 ###Why?
 Sometimes, especially when working with `JSON` data from the web, you will find that the data format is not quite JSON and thus have to do a little bit of fighting with it in order to successfully call `json.loads()`.  
 
-The goal of this package is to expose & abstract the oft-used functionality required to do this.
+###Goal
+The goal of this package is **try** and provide the same functionality as `json.loads()` for data that **looks** like JSON, but doesn't play nicely with `json.loads()` or other common solutions.  
+
+In its current state, it simply applies some heuristics that solve some of the common cases I've run into while working with not-quite `json` structured data. 
+
+Overtime, I see it becoming a **far** more useful package, as more cases are encountered and handled. 
 
 ###Usage
 ```python
