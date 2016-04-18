@@ -5,9 +5,7 @@ Sometimes, especially when working with `JSON` data from the web, you will find 
 ###Goal
 The goal of this package is **try** and provide the same functionality as `json.loads()` for data that **looks** like JSON, but doesn't play nicely with `json.loads()` or other common solutions.  
 
-In its current state, it simply applies some heuristics that solve some of the common cases I've run into while working with not-quite `json` structured data. 
-
-Overtime, I see it becoming a **far** more useful package, as more cases are encountered and handled. 
+In its current state, it simply applies some heuristics that solve some of the common cases I've run into while working with not-quite `json` structured data. Overtime, I'd like to see it turn into something a bit more robust.
 
 ###Usage
 ```python
