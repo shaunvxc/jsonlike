@@ -31,6 +31,26 @@ def clean_json(content):
     return remove_html(remove_bad_double_quotes(remove_invalid_escapes(add_missing_commas(content))))
 
 
+def process_repl(match):
+    return match.group(2)
+
+
+def remove_bad_blocks(block_pairs, content):
+    x = content
+    for pair in block_pairs:
+        x = remove_bad_block(pair[0], pair[1], x)
+
+    return x
+
+
+def remove_bad_block(key_name_to_rem, key_to_stop_rem_at, content):
+    if '"{}"'.format(key_name_to_rem) in content:
+        x = re.sub('(\"{}\":.{{1,}})(\"{}\")'.format(key_name_to_rem, key_to_stop_rem_at), process_repl, content, flags=re.DOTALL)
+        return x
+
+    return content
+
+
 def sub_first(match):
     return match.group(1) + '"'
 
