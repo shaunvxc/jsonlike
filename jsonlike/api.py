@@ -19,12 +19,8 @@ def loads(content):
         # strip out HTML content and unescaped chars
         return json.loads(cleaned)
     except Exception:
-        try:
-            # try loading it as YAML
-            return yaml.load(cleaned)
-        except Exception:
-            # try using demjson to decode a non-strict json string
-            return demjson.decode(cleaned)
+        # try using demjson to decode a non-strict json string
+        return demjson.decode(cleaned)
 
 
 def clean_json(content):

@@ -3,8 +3,6 @@
 import os
 from setuptools import setup, find_packages
 
-from jsonlike import VERSION
-
 here = os.path.abspath(os.path.dirname(__file__))
 
 required = [
@@ -13,7 +11,7 @@ required = [
 
 setup(
     name='jsonlike',
-    version=VERSION,
+    version='0.0.1',
     packages=['jsonlike'],
     url='https://github.com/shaunvxc/jsonlike',
     license='MIT',
