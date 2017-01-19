@@ -30,7 +30,7 @@ For JSON surrounded by a callback wrapper, calling `unwrap_and_load` will use th
 `$ pip install jsonlike`
 
 ## Contributing
-1. Fork it ( https://github.com/shaunvxc/envy/fork )
+1. Fork it ( https://github.com/shaunvxc/jsonlike/fork )
 1. Create your feature branch (`git checkout -b new-feature`)
 1. Commit your changes (`git commit -am 'Add some feature'`)
 1. Run the tests (`make test`)
