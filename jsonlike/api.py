@@ -13,15 +13,23 @@ def unwrap_and_load(content):
     return loads(cleaned)
 
 
-def loads(content):
-    cleaned = clean_json(content)
+def loads(content, try_yaml=False):
     try:
-        # strip out HTML content and unescaped chars
-        return json.loads(cleaned)
+        json.loads(content)
     except Exception:
-        # try using demjson to decode a non-strict json string
-        return demjson.decode(cleaned)
-
+        cleaned = clean_json(content)
+        try:
+            # strip out HTML content and unescaped chars
+            return json.loads(cleaned)
+        except Exception:
+            # try using demjson to decode a non-strict json string
+            try:
+                return demjson.decode(cleaned)
+            except Exception:
+                if try_yaml:
+                    # try loading as yaml-- yaml is a superset of json..this could be dangerous in cases
+                    return yaml.load(cleaned)
+                raise
 
 def clean_json(content):
     return remove_html(remove_bad_double_quotes(remove_invalid_escapes(add_missing_commas(content))))
