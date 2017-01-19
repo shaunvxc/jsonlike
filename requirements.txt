@@ -1,5 +1,5 @@
 demjson==2.2.4
-unwrapper>=0.0.7
+unwrapper==1.0.0
 nose
 sure
 pyyaml
