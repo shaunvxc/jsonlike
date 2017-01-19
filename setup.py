@@ -11,7 +11,7 @@ required = [
 
 setup(
     name='jsonlike',
-    version='0.0.1',
+    version='0.0.2',
     packages=['jsonlike'],
     url='https://github.com/shaunvxc/jsonlike',
     license='MIT',
