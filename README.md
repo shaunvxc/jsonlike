@@ -1,13 +1,13 @@
 # jsonlike [![Build Status](https://travis-ci.org/shaunvxc/jsonlike.svg?branch=master)](https://travis-ci.org/shaunvxc/jsonlike) [![PyPI version](https://badge.fury.io/py/jsonlike.svg)](https://badge.fury.io/py/jsonlike)
-###Why?
+### Why?
 Sometimes, especially when working with `JSON` data from the web, you will find that the data format is not quite JSON and thus have to do a little bit of fighting with it in order to successfully call `json.loads()`.  
 
-###Goal
+### Goal
 The goal of this package is **try** and provide the same functionality as `json.loads()` for data that **looks** like JSON, but doesn't play nicely with `json.loads()` or other common solutions.  
 
 In its current state, it simply applies some heuristics that solve some of the common cases I've run into while working with not-quite `json` structured data. Overtime, I'd like to see it turn into something a bit more robust.
 
-###Usage
+### Usage
 ```python
 import jsonlike
 jsonlike.loads(invalid_json_string)
@@ -26,7 +26,7 @@ jsonlike.unwrap_and_load("callback({"a": ""hello""})") # yields {"a":"hello"}
 ```
 For JSON surrounded by a callback wrapper, calling `unwrap_and_load` will use the `unwrapper` library to strip away the callback, before returning `loads()` on the remaining content.
 
-###Installation
+### Installation
 `$ pip install jsonlike`
 
 ## Contributing
